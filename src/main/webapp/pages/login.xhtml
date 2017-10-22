@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+
+	<title>Login page</title>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="description"
+		content="Expand, contract, animate forms with jQuery wihtout leaving the page" />
+	<meta name="keywords"
+		content="expand, form, css3, jquery, animate, width, height, adapt, unobtrusive javascript" />
+
+	<h:link rel="shortcut icon"
+		href="#{request.contextPath}/ressources/css/favicon.ico"
+		type="image/x-icon" />
+	<h:link rel="stylesheet" type="text/css"
+		href="#{request.contextPath}/ressources/css/style.css" />
+	<h:outputScript library="js" name="cufon-yui.js" type="text/javascript" />
+	<h:outputScript library="js" name="ChunkFive_400.font.js"
+		type="text/javascript" />
+	<h:outputScript type="text/javascript">
+			Cufon.replace('h1',{ textShadow: '1px 1px #fff'});
+			Cufon.replace('h2',{ textShadow: '1px 1px #fff'});
+			Cufon.replace('h3',{ textShadow: '1px 1px #000'});
+			Cufon.replace('.back');
+		</h:outputScript>
+
+
+
+</h:head>
+<h:body>
+	<center>
+		<img src="../images/11225970_873572039382884_956799974_n.jpg"
+			width="900" height="300" />
+	</center>
+	<h:form>
+		<center>
+			<FIELDSET
+				style="width: 360px; border-color: maroon; height: 170px; border: double;">
+				<legend style="color: maroon;">Please Sign In</legend>
+
+				<h:panelGrid columns="2">
+					<h:outputText value="Login" style="color:#FA860B" />
+					<br></br>
+					<br />
+					<h:inputText value="#{authbean.developper.developper_login}"
+						size="12" maxlength="12" />
+					<br></br>
+					<h:outputText value="Password" style="color:#FA860B" />
+					<br></br>
+					<h:inputSecret value="#{authbean.developper.developper_password}"
+						size="12" maxlength="12" />
+					<br></br>
+					<br></br>
+					<h:commandButton
+						style="background-color:orange; width: 100px; height: 25px ;"
+						action="#{authbean.login()}" value="Log In" />
+
+				</h:panelGrid>
+			</FIELDSET>
+		</center>
+
+	</h:form>
+
+
+</h:body>
+</html>

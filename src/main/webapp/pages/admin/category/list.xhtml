@@ -1,0 +1,30 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+	<h:dataTable value="#{teamBean.listTeam}" var="cat"
+		border="1">
+		<f:facet name="header">All Teams</f:facet>
+		<h:column>
+			<f:facet name="header">#</f:facet>
+			<h:outputText value="#{cat.team_id}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">name</f:facet>
+			<h:outputText value="#{cat.team_name}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">Action</f:facet>
+			<h:form>
+				<h:commandButton value="Select">
+					<f:setPropertyActionListener target="#{teamBean.team}"
+						value="#{cat}" />
+					<f:setPropertyActionListener
+						target="#{teamBean.form_displayed}" value="true" />
+				</h:commandButton>
+			</h:form>
+		</h:column>
+	</h:dataTable>
+</ui:composition>

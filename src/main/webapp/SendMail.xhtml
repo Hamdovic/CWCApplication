@@ -1,0 +1,61 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="/template/template.xhtml">
+                	
+					<ui:define  name="pageTitle">Send Mail</ui:define>	
+			<ui:define name="pagemail">
+			  <br></br><br></br>
+			     <h1 class="text-extra-big font-hard"><span class="text-color " >SEND </span> MAILS </h1>
+			     
+		<div class="box-body">
+			<div class="border-gradient-right">
+			<br> </br>
+			<h:form>
+            <h:panelGrid columns="2">
+              <div class="form-group" >
+             <LABEL>To:</LABEL>   
+                <h:panelGroup>
+                    <h:inputText size="50" id="name"
+                                 value="#{clientBean.recipient}"
+                                 required="true"
+                                 requiredMessage="Required" style="color:black"/>
+                    <h:message for="name" style="color:red"/>
+                </h:panelGroup>
+              </div> 
+               <div class="form-group" >
+                <LABEL> Subject:</LABEL>    
+               
+                <h:panelGroup>
+                    <h:inputText size="50" id="subject"
+                                 value="#{clientBean.subject}"
+                                 required="true"
+                                 requiredMessage="Required" style="color:black"/>
+                    <h:message for="subject" style="color:red"/>
+                </h:panelGroup>
+                </div>
+               <div class="form-group" >
+               <label>Message:  </label>
+                <h:panelGroup>
+                    <h:inputTextarea name="editor1"
+                     cols="80" rows="10" id="message"
+                                     value="#{clientBean.message}"
+                                     required="true"
+                                     requiredMessage="Required " style="color:black"/>
+                    <h:message for="message" Style="visibility: hidden; display: none;"/>
+                </h:panelGroup>
+                </div>
+                <h:commandButton value="Send" action="#{clientBean.send()}" style="color:black"/>
+                <h:outputText value="#{clientBean.statusMessage}" style="color:red" />
+                
+            </h:panelGrid>
+        </h:form>
+        </div>
+			</div>
+			
+			</ui:define>
+
+
+
+</ui:composition>

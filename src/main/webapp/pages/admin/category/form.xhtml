@@ -1,0 +1,24 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<h:form rendered="#{teamBean.form_displayed}">
+		<h:panelGrid columns="2">
+			<h:outputText value="id" />
+			<h:inputText value="#{teamBean.team.team_id}" />
+			<h:outputText value="name" />
+			<h:inputText value="#{teamBean.team.team_name}" />
+			<h:commandButton value="cancel"
+				action="#{teamBean.doCancel()}" />
+			<h:panelGrid columns="2">
+				<h:commandButton value="delete"
+					action="#{teamBean.doDelete()}" />
+				<h:commandButton value="Save"
+					action="#{teamBean.doSaveOrUpdate()}" />
+			</h:panelGrid>
+		</h:panelGrid>
+	</h:form>
+
+
+</ui:composition>

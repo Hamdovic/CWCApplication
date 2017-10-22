@@ -1,0 +1,61 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="/template/template.xhtml">
+                	
+			<ui:define name="pageTitle">index</ui:define>	
+				
+			<ui:define name="pageindex">
+		  <section id="first" class="body full">
+                <div id="pallax-first" class="parallax background-full" data-image='images/home.jpg' >
+                    <div class="bg-wrapper"></div>
+                    <article class="body left-right">
+                        <div class="DivParent-background-full text-center around-white front relative">
+                            <div class="DivWhichNeedToBeVerticallyAligned">
+                                <h1 class="text-extra-big font-hard">Welcome<br></br><span class="text-color"> #{authbean.developper.developper_firstname}<br></br>
+		#{authbean.developper.developper_lastname}<br></br>
+		</span>you logged in successfully </h1>
+                              
+                         </div>
+                            <div class="DivHelper"></div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </article>
+                </div>
+            </section>
+			<section class="body section-color text-right">
+
+                <div class="inline left text-left">
+                    
+                    <span class="text-white text-smaller block"><h1>Consulidated Workload Calculation</h1></span>
+                </div>
+                <div class="clearfix visible-xs box-spacing-small"></div>
+                <a href="about.html" class="btn-ba5nanas-transparent text-medium-large hover-bg-black font-soft play-animations inline"> <span> CWC</span> </a>
+            </section>
+			
+			  <div class="border-gradient-right"></div>
+            
+            <section id="WORKS" class="body full section-black">
+                <div class="background-full" data-background=''>
+                    <div class='bg-wrapper front-heigh'></div>
+                    <article class="body left-right">
+                        <div class="DivParent-background-full text-center around-white front relative">
+                            <div class="DivWhichNeedToBeVerticallyAligned">
+                                <h1 class="text-extra-big font-hard"><span class="text-color " >OUR </span> WORK AND SERVICES</h1>
+
+                               <br/>
+                                <a href="page.jsf" class="bg-color text-box text-medium-large hover-bg-black font-soft play-animations inline"> <span> Learn More </span>  <span class="block text-smallest text-left"> OUR PROJECTS </span> </a>
+                            </div>
+                            <div class="DivHelper"></div>
+                        </div>
+                    </article>
+                    <div class='control-youtube absolute top '>
+                        <div id="playerYoutube" class='playerYoutube-bg height-full' data-video_id='kn-1D5z3-Cs' data-video_quality='default'></div> 
+                    </div>
+                </div>
+            </section>
+			</ui:define>
+			
+			
+</ui:composition>

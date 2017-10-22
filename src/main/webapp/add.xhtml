@@ -1,0 +1,76 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                  xmlns:c="http://java.sun.com/jsf/core"
+                
+                template="/template/template.xhtml">
+                	
+			<ui:define  name="pageTitle">Informations</ui:define>	
+				
+			<ui:define name="pagelist">
+		
+		     <br></br><br></br>
+			     <h1 class="text-extra-big font-hard"><span class="text-color " >MODIFY </span>  INFORMATIONS </h1>
+			      <div class="box-body">
+			
+			<br> </br>
+			
+			   <h:form>
+			   
+			   
+			   <div class="label text-medium-large">
+			   <h:outputText value="id"/></div>
+			   <h:inputText disabled="true" value="#{authbean.developper.developper_id}" style="color:black"/>
+			   <br> </br>
+			   
+			   <div class="label text-medium-large">
+			   <h:outputText value="cin"/></div>
+			   <h:inputText value="#{authbean.developper.developper_Cin}" style="color:black"/>
+			   <br> </br>
+			   
+			   <div class="label text-medium-large">
+			   <h:outputText value="PhoneNumber"/></div>
+			   <h:inputText value="#{authbean.developper.developper_PhoneNumber}" style="color:black" />
+			   <br> </br>
+			   
+			   <div class="label text-medium-large">
+			   <h:outputText value="Birhtday"/></div>
+			   <h:inputText value="#{authbean.developper.developper_birhtday}" style="color:black" />
+			   <br> </br>
+			   <div class="label text-medium-large">
+			   <h:outputText value="Name"/></div>
+			   <h:inputText value="#{authbean.developper.developper_firstname}" style="color:black"/>
+			   <br> </br>
+			   <div class="label text-medium-large">
+			   <h:outputText value="home-address"/></div>
+			   <h:inputText value="#{authbean.developper.developper_homeaddress}" style="color:black" />
+			   <br> </br>
+			   <div class="label text-medium-large">
+			   <h:outputText value="Last name"/></div>
+			   <h:inputText value="#{authbean.developper.developper_lastname}" style="color:black"/>
+			   <br> </br>
+			  
+			  <div class="label text-medium-large">
+			   <h:outputText value="Name team"/></div>
+			   <h:inputText disabled="true" value="#{authbean.developper.team.team_name}" style="color:black"/>
+			   <br> </br>
+			   
+			   <div class="label text-medium-large">
+			   <h:outputText value="password"/></div>
+			   <h:inputText disabled="true" value="#{authbean.developper.developper_password}" style="color:black"/>
+			   <br> </br>
+			   
+			   <div class="label text-medium-large">
+			   <h:outputText value="login"/></div>
+			   <h:inputText value="#{authbean.developper.developper_login}" style="color:black"/>
+			   <br> </br>
+			   
+			   <h:commandButton value="save" action="#{developperBean.doSaveOrUpdate()}" style="color:black" />
+			   
+			   </h:form>
+			   
+			
+			</div>
+			</ui:define>
+</ui:composition>

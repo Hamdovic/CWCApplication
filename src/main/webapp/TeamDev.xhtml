@@ -1,0 +1,47 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="/template/template.xhtml">
+                	
+			<ui:define name="pageTitle">List of developpers</ui:define>		
+			<ui:define name="pageteamdev">
+ <br></br><br></br>
+			     <h1 class="text-extra-big font-hard"><span class="text-color " >LIST </span> OF DEVELOPPERS </h1>
+			      <div class="box-body">
+			
+			<br> </br>	
+
+	 <h:dataTable  id="example2" class="table" aria-describedby="example1_info"
+     
+     value="#{teamConsultBean.developpers}"
+      var="teamd" >
+  
+    <h:column>
+	    <f:facet name="header" >
+	     <div class="label text-medium-large">Developper name</div>
+     	</f:facet>
+     	<h:outputText value="#{teamd.developper_firstname} " />
+     	<h:outputText value="#{teamd.developper_lastname}" />
+    </h:column>
+      <h:column>
+	    <f:facet name="header" >
+	     <div class="label text-medium-large">Team</div>
+     	</f:facet>
+     	<h:outputText value="#{teamd.team.team_name}" />
+    </h:column>
+  <h:column>
+	    <f:facet name="header" >
+	     <div class="label text-medium-large">Phone Number</div>
+     	</f:facet>
+     	<h:outputText value="#{teamd.developper_PhoneNumber}" />
+    </h:column>     
+
+  
+   
+  </h:dataTable>
+	</div>
+	
+
+			</ui:define>
+</ui:composition>

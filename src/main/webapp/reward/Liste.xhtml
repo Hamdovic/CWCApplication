@@ -1,0 +1,50 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="/template/template.xhtml">
+                	
+			<ui:define name="pageTitle">rewards</ui:define>		
+			<ui:define name="pagerew">
+			   <br></br><br></br>
+			     <h1 class="text-extra-big font-hard"><span class="text-color " >LIST </span> OF REWARDS </h1>
+			      <div class="box-body">
+			
+			<br> </br>
+			
+			
+			<h:dataTable  id="example2" class="table" aria-describedby="example1_info"
+     value="#{rewardBean.rewards}"
+      var="pro" >
+    
+	 
+ 
+    <h:column>
+	    <f:facet name="header">
+	        <div class="label text-medium-large">Reward name</div>
+     	</f:facet>
+     	<h:outputText value="#{pro.reward_name}" />
+    </h:column>
+    
+     <h:column>
+	    <f:facet name="header">
+	     <div class="label text-medium-large">Reward description</div>
+     	</f:facet>
+     	<h:outputText value="#{pro.reward_description}" />
+    </h:column>
+    
+     <h:column>
+	    <f:facet name="header">
+	      <h:outputText value="" />
+     	</f:facet>
+        <img src="../images/noel-cadeaux-16.jpg" />
+    </h:column>
+    
+     </h:dataTable>
+			
+			
+			</div>	
+	
+			
+			</ui:define>
+</ui:composition>

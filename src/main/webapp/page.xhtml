@@ -1,0 +1,63 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                  xmlns:c="http://java.sun.com/jsf/core"
+                
+                template="/template/template.xhtml">
+                	
+			<ui:define  name="pageTitle">Projects</ui:define>	
+				
+			<ui:define name="pagelist">
+		
+		     <br></br><br></br>
+			     <h1 class="text-extra-big font-hard"><span class="text-color " >PROJECTS</span> PROGRESS </h1>
+			      <div class="box-body">
+			<div class="border-gradient-right">
+			<br> </br>
+			
+			   <h:dataTable  id="example2" class="table" aria-describedby="example1_info"
+     value="#{projectBean.projects}"
+      var="pro"   >
+  
+    <h:column>
+	    <f:facet name="header" >
+	     <div class="label text-medium-large">Project name</div>
+     	</f:facet>
+     	<h:outputText value="#{pro.project_name}" />
+    </h:column>
+     
+     <h:column>
+	    <f:facet name="header">
+	  <div class="label text-medium-large">Start Date</div>
+     	</f:facet>
+     	<h:outputText value="#{pro.project_startdate}" />
+    </h:column>
+    <h:column>
+	    <f:facet name="header">
+	   <div class="label text-medium-large">Delivery date</div>
+     	</f:facet>
+     	<h:outputText value="#{pro.project_deliverydate}" />
+    </h:column>
+    <h:column>
+       <f:facet name="header">
+	    <div class="label text-medium-large">Project progress</div>
+     	</f:facet>
+  
+     <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="#{projectBean.Progress(pro.tasks)}" aria-valuemin="0" aria-valuemax="100" style="width:#{projectBean.Progress(pro.tasks)}%">
+      #{projectBean.Progress(pro.tasks)}%
+    </div>
+    </h:column>
+    <h:column>
+           <f:facet name="header">
+	    <div class="label text-medium-large">Project State</div>
+     	</f:facet>
+	   <div class="#{projectBean.couleur(projectBean.Statett(pro.project_deliverydate,pro.project_state),pro.project_state)}">
+     	#{projectBean.Statett(pro.project_deliverydate,pro.project_state)}
+     	</div>
+    </h:column>
+  </h:dataTable>
+			</div>
+			</div>
+			</ui:define>
+</ui:composition>

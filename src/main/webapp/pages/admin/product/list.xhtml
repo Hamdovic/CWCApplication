@@ -1,0 +1,69 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+
+	
+		<!-- <h:column>
+			<f:facet name="header">#</f:facet>
+			<h:outputText value="#{prod.project_id}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">Start Date</f:facet>
+			<h:outputText value="#{prod.project_startdate}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">name</f:facet>
+			<h:outputText value="#{prod.project_name}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">Delivery Date</f:facet>
+			<h:outputText value="#{prod.project_deliverydate}" />
+		</h:column> -->
+		<!-- <h:column>
+			<f:facet name="header">State</f:facet>
+			<h:outputText value="#{prod.project_startdate}" />
+		</h:column> -->
+		<h:dataTable  id="example2" class="table" aria-describedby="example1_info"
+     value="#{projetBean.projects}"
+      var="pro"   >
+  <f:facet name="header">All Projects</f:facet>
+    <h:column>
+	    <f:facet name="header" >
+	     <div class="label text-medium-large">Project name</div>
+     	</f:facet>
+     	<h:outputText value="#{pro.project_name}" />
+    </h:column>
+     
+     <h:column>
+	    <f:facet name="header">
+	  <div class="label text-medium-large">Start Date</div>
+     	</f:facet>
+     	<h:outputText value="#{pro.project_startdate}" />
+    </h:column>
+    <h:column>
+	    <f:facet name="header">
+	   <div class="label text-medium-large">Delivery date</div>
+     	</f:facet>
+     	<h:outputText value="#{pro.project_deliverydate}" />
+    </h:column>
+		<h:column>
+			<f:facet name="header">team</f:facet>
+			<h:outputText value="#{pro.team.team_name}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">Action</f:facet>
+			<h:form>
+				<h:commandButton value="Select">
+					<f:setPropertyActionListener target="#{projetBean.project}"
+						value="#{pro}" />
+					<f:setPropertyActionListener
+						target="#{projetBean.form_displayed}" value="true" />
+				</h:commandButton>
+			</h:form>
+		</h:column>
+
+	</h:dataTable>
+
+</ui:composition>

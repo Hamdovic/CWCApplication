@@ -1,0 +1,36 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<h:form rendered="#{projetBean.form_displayed}">
+		<h:panelGrid columns="2">
+			<h:outputText value="id" />
+			<h:inputText value="#{projetBean.project.project_id}" />
+			<h:outputText value="name" />
+			<h:inputText value="#{projetBean.project.project_name}" />
+			<h:outputText value="start Date" />
+			<h:inputText id="project_startdate" value="#{projetBean.project.project_startdate}">
+							<f:convertDateTime pattern="dd/MM/yyyy"/>				
+						</h:inputText>
+			<h:outputText value="Delivery Date" />
+			<h:inputText id="project_deliverydate" value="#{projetBean.project.project_deliverydate}">
+							<f:convertDateTime pattern="dd/MM/yyyy"/>				
+						</h:inputText>
+			
+			<h:outputText value="team" />
+			<h:selectOneMenu value="#{projetBean.team}" converter="#{cc}">
+				<f:selectItems value="#{projetBean.listteam}"
+					itemValue="#{cat}" itemLabel="#{cat.team_name}" var="cat" />
+			</h:selectOneMenu>
+			<h:commandButton value="cancel" action="#{projetBean.doCancel()}" />
+			<h:panelGrid columns="2">
+				<h:commandButton value="delete" action="#{projetBean.doDelete()}" />
+				<h:commandButton value="Save"
+					action="#{projetBean.doSaveOrUpdate()}" />
+			</h:panelGrid>
+		</h:panelGrid>
+	</h:form>
+
+
+</ui:composition>
